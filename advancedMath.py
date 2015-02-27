@@ -47,19 +47,26 @@ def differentiate (poly, atX):
       19.0
       """
 
+    retList = []
     base  = eval_f(poly, atX)
     incr  = .1
     endv  = eval_f(poly, atX+incr)
-    print "dy/dx: %s (%s to %s)" % ( ((endv-base)/incr), atX, atX+incr )
+    retList.append(endv)
+    #
     incr  /= 10.0
     endv  = eval_f(poly, atX+incr)
-    print "dy/dx: %s (%s to %s)" % ( ((endv-base)/incr), atX, atX+incr )
+    retList.append(endv)
+    #
     incr  /= 10.0
     endv  = eval_f(poly, atX+incr)
-    val = (endv-base)/incr
-    print "dy/dx: %s (%s to %s)" % ( ((endv-base)/incr), atX, atX+incr )
+    retList.append(endv)
+    #
     incr  /= 10.0
     endv  = eval_f(poly, atX+incr)
-    val = (endv-base)/incr
-    print "dy/dx: %s (%s to %s)" % ( ((endv-base)/incr), atX, atX+incr )
-    return round(val)
+    retList.append(endv)
+    #
+    incr  /= 10.0
+    endv  = eval_f(poly, atX+incr)
+    retList.append(endv)
+    #
+    return retList
